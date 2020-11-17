@@ -293,6 +293,17 @@ namespace ConsoleApp
             } while (keepGoing == false);
 
             myList.ForEach(Console.WriteLine);
+
+            Console.WriteLine("Type in your name: ");
+            string yourName = Console.ReadLine();
+            char[] charArray = yourName.ToCharArray();
+            Array.Reverse(charArray);
+            charArray[0] = char.ToUpper(charArray[0]);
+            charArray[charArray.Length - 1] = char.ToLower(charArray[charArray.Length - 1]);
+
+            Console.WriteLine("your reversed name is: ");
+            Console.WriteLine(charArray);
+
             Console.WriteLine("press Enter to return to main menu");
             Console.ReadLine();
             Console.Clear();
