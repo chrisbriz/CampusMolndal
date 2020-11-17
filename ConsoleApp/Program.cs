@@ -262,6 +262,7 @@ namespace ConsoleApp
         static void ExerciseThree()
         {
             int[] myArray = new int[3] { 10, 4, 8 };
+
             int i = 0;
 
             while (i < myArray.Length)
