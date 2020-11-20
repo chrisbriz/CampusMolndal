@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ConsoleApp
@@ -19,11 +20,11 @@ namespace ConsoleApp
                     First();
                 }
 
-                //if (cki.Key == ConsoleKey.D2 || cki.Key == ConsoleKey.NumPad2)
-                //{
-                //    Console.Clear();
-                //    Second();
-                //}
+                if (cki.Key == ConsoleKey.D2 || cki.Key == ConsoleKey.NumPad2)
+                {
+                    Console.Clear();
+                    Second();
+                }
 
                 if (cki.Key == ConsoleKey.D0 || cki.Key == ConsoleKey.NumPad0)
                 {
@@ -91,6 +92,26 @@ namespace ConsoleApp
             }
 
             Console.ReadLine();
+            Console.WriteLine("Press Enter to return to menu");
+            SubMenu();
+        }
+
+        public static void Second()
+        {
+            char[] persNum = new char[10]{ '8','5','0','9','0','8','7','8','7','7' };
+            Random rnd = new Random();
+            Console.WriteLine(persNum);
+
+            for (int i = 6; i < persNum.Length; i++)
+            {
+                string myInt = rnd.Next(0, 9).ToString();
+                persNum[i] = char.Parse(myInt);
+            }
+
+            Console.WriteLine(persNum);
+            Console.ReadLine();
+            Console.WriteLine("Press Enter to return to menu");
+            SubMenu();
         }
     }
 }

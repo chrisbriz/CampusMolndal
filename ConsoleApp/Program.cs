@@ -8,7 +8,6 @@ namespace ConsoleApp
     {
         public static void Main(string[] args)
         {
-            //bool valid = true;
             bool open = true;
 
             MainMenu();
