@@ -28,11 +28,11 @@ namespace ConsoleApp
                 if (cki.Key == ConsoleKey.D0 || cki.Key == ConsoleKey.NumPad0)
                 {
                     Console.Clear();
-                    return;
+                    break;
                 }
             } while (open == false);
 
-            Program.Main(null);
+            Program.MainMenu();
         }
 
         public static void Selection()
@@ -56,6 +56,8 @@ namespace ConsoleApp
             }
 
             Console.WriteLine("");
+
+            SubMenu();
         }
 
         public static void Second()
@@ -105,7 +107,7 @@ namespace ConsoleApp
             Console.WriteLine("press Enter to return to main menu");
             Console.ReadLine();
             Console.Clear();
-            Program.Main(null);
+            SubMenu();
         }
     }
 }

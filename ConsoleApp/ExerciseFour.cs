@@ -11,29 +11,35 @@ namespace ConsoleApp
         {
             bool open = true;
             Selection();
-            var cki = Console.ReadKey();
+            var ki = Console.ReadKey();
             do
             {
-                if (cki.Key == ConsoleKey.D1 || cki.Key == ConsoleKey.NumPad1)
+                if (ki.Key == ConsoleKey.D1 || ki.Key == ConsoleKey.NumPad1)
                 {
                     Console.Clear();
                     First();
                 }
 
-                if (cki.Key == ConsoleKey.D2 || cki.Key == ConsoleKey.NumPad2)
+                if (ki.Key == ConsoleKey.D2 || ki.Key == ConsoleKey.NumPad2)
                 {
                     Console.Clear();
                     Second();
                 }
 
-                if (cki.Key == ConsoleKey.D0 || cki.Key == ConsoleKey.NumPad0)
+                if (ki.Key == ConsoleKey.D3 || ki.Key == ConsoleKey.NumPad3)
                 {
                     Console.Clear();
-                    return;
+                    Third();
+                }
+
+                if (ki.Key == ConsoleKey.D0 || ki.Key == ConsoleKey.NumPad0)
+                {
+                    Console.Clear();
+                    break;
                 }
             } while (open == false);
 
-            Program.Main(null);
+            Program.MainMenu();
         }
 
         public static void Selection()
@@ -98,7 +104,7 @@ namespace ConsoleApp
 
         public static void Second()
         {
-            char[] persNum = new char[10]{ '8','5','0','9','0','8','7','8','7','7' };
+            char[] persNum = new char[10] { '8', '5', '0', '9', '0', '8', '7', '8', '7', '7' };
             Random rnd = new Random();
             Console.WriteLine(persNum);
 
@@ -112,6 +118,31 @@ namespace ConsoleApp
             Console.ReadLine();
             Console.WriteLine("Press Enter to return to menu");
             SubMenu();
+        }
+
+        public static void Third()
+        {
+            List<string> story;
+
+            story = new List<string>()
+            {
+                "Det var en gång ",
+                "som gick till ",
+                "och sedan ",
+                "snipp snapp snutt, så var sagan slut."
+            };
+
+            Console.WriteLine("Complete the story as it goes");
+            for (int i = 0; i < story.Count; i+=2)
+            {
+                Console.WriteLine(story[i]);
+                string storyPart = Console.ReadLine();
+
+                story.Insert(i + 1, storyPart);
+            };
+
+            Console.WriteLine("your full story is: ");
+            Console.WriteLine(story);
         }
     }
 }

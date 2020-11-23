@@ -50,7 +50,7 @@ namespace ConsoleApp
             Console.WriteLine("press Enter to return to main menu");
             Console.ReadLine();
             Console.Clear();
-            Program.Main(null);
+            Program.MainMenu();
         }
     }
 }

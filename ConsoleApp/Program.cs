@@ -6,11 +6,22 @@ namespace ConsoleApp
 {
     class Program
     {
-        public static void Main(string[] args)
-        {
-            bool open = true;
+        public static void Main(string[] args) => MainMenu();
 
-            MainMenu();
+        public static void MainMenu()
+        {
+            Console.Title = "Välkommen till övningarna";
+            Console.ResetColor();
+            Console.Clear();
+            Console.WriteLine("Choose which exercise to review: ");
+            Console.WriteLine("1 - Exercise One");
+            Console.WriteLine("2 - Exercise Two");
+            Console.WriteLine("3 - Exercise Three");
+            Console.WriteLine("4 - Pirate Speech");
+            Console.WriteLine("5 - Exercise Four");
+            Console.WriteLine("0 - Exit");
+
+            bool open = true;
 
             var cki = Console.ReadKey();
 
@@ -48,24 +59,12 @@ namespace ConsoleApp
 
                 if (cki.Key == ConsoleKey.D0 || cki.Key == ConsoleKey.NumPad0)
                 {
-                    return;
+                    break;
                 }
 
             } while (open == false);
-        }
 
-        public static void MainMenu()
-        {
-            Console.Title = "Välkommen till övningarna";
-            Console.ResetColor();
-            Console.Clear();
-            Console.WriteLine("Choose which exercise to review: ");
-            Console.WriteLine("1 - Exercise One");
-            Console.WriteLine("2 - Exercise Two");
-            Console.WriteLine("3 - Exercise Three");
-            Console.WriteLine("4 - Pirate Speech");
-            Console.WriteLine("5 - Exercise Four");
-            Console.WriteLine("0 - Exit");
+            Environment.Exit(1);
         }
     }
 }

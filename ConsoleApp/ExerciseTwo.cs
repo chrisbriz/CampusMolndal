@@ -32,7 +32,7 @@ namespace ConsoleApp
                 {
                     Console.Beep(415, 500);
                     Console.Clear();
-                    return;
+                    break;
                 }
 
                 if (keyRead.Key == ConsoleKey.D1 || keyRead.Key == ConsoleKey.NumPad1)
@@ -131,7 +131,7 @@ namespace ConsoleApp
                 }
             } while (open == false);
 
-            Program.Main(null);
+            Program.MainMenu();
         }
     }
 }
