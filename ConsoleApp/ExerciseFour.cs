@@ -47,6 +47,7 @@ namespace ConsoleApp
             Console.WriteLine("Choose which exercise to review: ");
             Console.WriteLine("1 - First");
             Console.WriteLine("2 - Second");
+            Console.WriteLine("3 - Third");
             Console.WriteLine("0 - Return to main menu");
         }
 
@@ -127,9 +128,9 @@ namespace ConsoleApp
             story = new List<string>()
             {
                 "Det var en gång ",
-                "som gick till ",
-                "och sedan ",
-                "snipp snapp snutt, så var sagan slut."
+                " som gick till ",
+                " och sedan ",
+                " snipp snapp snutt, så var sagan slut."
             };
 
             Console.WriteLine("Complete the story as it goes");
@@ -142,7 +143,11 @@ namespace ConsoleApp
             };
 
             Console.WriteLine("your full story is: ");
-            Console.WriteLine(story);
+            story.ForEach(Console.Write);
+
+            Console.ReadLine();
+
+            
         }
     }
 }
